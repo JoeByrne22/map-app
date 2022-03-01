@@ -1,36 +1,41 @@
 import '../App.css';
-import React, { useState } from 'react';
+import React from 'react';
 
-function Login() {
-    const [submitting, setSubmitting] = useState(false);
-    const handleSubmit = event => {
-        event.preventDefault();
-        console.log('submitted');
-        setSubmitting(true);
-
-        setTimeout(() => {
-            setSubmitting(false);
-            console.log('submitted time');
-        }, 4000)
+class LoginForm extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {value: ''};
+  
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-  return (
-    <div className="Login-form">
-        {submitting &&
-            <div>Submtting Form...</div>
-            }
-        <form onSubmit={handleSubmit}>
-            <fieldset>
-                <label>
-                <p>Name</p>
-                <input name="name" />
-                </label>
-            </fieldset>
-            
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-  );
-}
+    handleChange(event) {
+      this.setState({value: event.target.value});
+    }
+  
+    handleSubmit(event) {
+      console.log('A name was submitted: ' + this.state.value);
+      
 
-export default Login;
+      navigator.geolocation.getCurrentPosition(function(position) {
+        console.log("Latitude is :", position.coords.latitude);
+        console.log("Longitude is :", position.coords.longitude);
+      });
+      event.preventDefault();
+    }
+  
+    render() {
+      return (
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Name:
+            <input type="text" value={this.state.value} onChange={this.handleChange} />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+      );
+    }
+  }
+
+export default LoginForm;
