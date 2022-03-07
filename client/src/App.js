@@ -1,6 +1,7 @@
 import './App.css';
 import LoginForm from './components/Login.js'
-import Map from './components/Map.js'
+import MapApp from './components/Map.js'
+import Home from './components/Home.js'
 import {
   BrowserRouter,
   Routes,
@@ -12,8 +13,9 @@ function App() {
     <BrowserRouter>
       <div>
         <Routes>
-          <Route path="" element={<LoginForm />} />
-          <Route path="/index" element={<Map />} />
+        <Route path="/" element={<Home />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/index" element={<MapApp />} />
         </Routes>
       </div>
     </BrowserRouter>

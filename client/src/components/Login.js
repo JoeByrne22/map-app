@@ -1,6 +1,7 @@
 import '../App.css';
 import React from 'react';
 
+
 class LoginForm extends React.Component {
     constructor(props) {
       super(props);
@@ -16,13 +17,12 @@ class LoginForm extends React.Component {
   
     handleSubmit(event) {
       console.log('A name was submitted: ' + this.state.value);
-      
-
-      navigator.geolocation.getCurrentPosition(function(position) {
-        console.log("Latitude is :", position.coords.latitude);
-        console.log("Longitude is :", position.coords.longitude);
-      });
+        navigator.geolocation.getCurrentPosition(function(position) {
+          console.log("Latitude is :", position.coords.latitude);
+          console.log("Longitude is :", position.coords.longitude);
+        });
       event.preventDefault();
+      window.location.replace('/index');
     }
   
     render() {

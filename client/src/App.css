@@ -36,3 +36,52 @@
     transform: rotate(360deg);
   }
 }
+
+/* Customised CSS */
+
+.profile-wrapper {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  /* width: 100%; */
+  height: 100%;
+  background-color: pink;
+}
+
+.profile-container {
+  width: 400px;
+}
+
+.search {
+  padding: 9px;
+  background-color: #f1f1f1;
+}
+
+.search-input {
+  width: 97.9%;
+  height: 40px;
+}
+
+.map-container {
+  background-color: #61dafb;
+}
+
+/* Card component */
+
+.card-container {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid red;
+}
+
+.card-container-info-title {
+  margin: 0 0 5px;
+  color: #363636;
+}
+
+.card-container-info-p {
+  margin: 0 0 5px;
+  color: #686868;
+}

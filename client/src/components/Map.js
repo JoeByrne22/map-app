@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 
-class MapIndex extends React.Component {
-    render() {
-      return (
-        <h1>HELLO MAP</h1>
-      );
-    }
+class MapApp extends Component {
+  render() {
+    return (
+        <h1>Map component</h1>
+    );
   }
+}
 
-export default MapIndex;
+export default MapApp;
